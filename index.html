@@ -1099,18 +1099,18 @@ function rDSupervisor(){
       vpdv.forEach(p=>p.m.forEach(m=>{vtot++;if(c[ck(p.i,m)]?.done){vdn++;vpts+=10;}}));
       const vpct=vtot?Math.round(vdn/vtot*100):0;
       const vname=SUP_MAP_NAMES[v]||('V'+v);
-      return\`<tr style="background:var(--bg)">
-        <td style="padding:6px 12px;color:var(--tx2);font-size:11px">└ \${vname}</td>
-        <td style="padding:6px 8px;text-align:center;font-size:11px">\${vpdv.length}</td>
-        <td style="padding:6px 8px;text-align:center;font-size:11px">\${vdn}/\${vtot}</td>
-        <td style="padding:6px 8px;text-align:center;font-size:11px">\${vpts}</td>
+      return`<tr style="background:var(--bg)">
+        <td style="padding:6px 12px;color:var(--tx2);font-size:11px">└ ${vname}</td>
+        <td style="padding:6px 8px;text-align:center;font-size:11px">${vpdv.length}</td>
+        <td style="padding:6px 8px;text-align:center;font-size:11px">${vdn}/${vtot}</td>
+        <td style="padding:6px 8px;text-align:center;font-size:11px">${vpts}</td>
         <td style="padding:6px 8px">
           <div style="background:var(--bdr);border-radius:4px;height:6px;overflow:hidden">
-            <div style="width:\${vpct}%;height:100%;background:var(--red);border-radius:4px"></div>
+            <div style="width:${vpct}%;height:100%;background:var(--red);border-radius:4px"></div>
           </div>
-          <div style="font-size:10px;color:var(--tx3);text-align:right;margin-top:1px">\${vpct}%</div>
+          <div style="font-size:10px;color:var(--tx3);text-align:right;margin-top:1px">${vpct}%</div>
         </td>
-      </tr>\`;
+      </tr>`;
     }).join('');
   };
   
@@ -1127,18 +1127,18 @@ function rDSupervisor(){
     const s=supStats[sid];
     if(!s.pdvs.length)return;
     const pct=s.tot?Math.round(s.dn/s.tot*100):0;
-    html+=\`<tr style="border-top:1px solid var(--bdr);background:var(--surf)">
-      <td style="padding:10px 12px;font-weight:700;font-size:13px;color:var(--tx1)">👤 \${s.name}</td>
-      <td style="padding:10px 8px;text-align:center;font-size:13px;font-weight:700">\${s.pdvs.length}</td>
-      <td style="padding:10px 8px;text-align:center;font-size:13px;font-weight:700">\${s.dn}/\${s.tot}</td>
-      <td style="padding:10px 8px;text-align:center;font-size:13px;font-weight:700;color:var(--red)">\${s.pts}</td>
+    html+=`<tr style="border-top:1px solid var(--bdr);background:var(--surf)">
+      <td style="padding:10px 12px;font-weight:700;font-size:13px;color:var(--tx1)">👤 ${s.name}</td>
+      <td style="padding:10px 8px;text-align:center;font-size:13px;font-weight:700">${s.pdvs.length}</td>
+      <td style="padding:10px 8px;text-align:center;font-size:13px;font-weight:700">${s.dn}/${s.tot}</td>
+      <td style="padding:10px 8px;text-align:center;font-size:13px;font-weight:700;color:var(--red)">${s.pts}</td>
       <td style="padding:10px 8px">
         <div style="background:var(--bdr);border-radius:6px;height:10px;overflow:hidden">
-          <div style="width:\${pct}%;height:100%;background:var(--red);border-radius:6px;transition:width .4s"></div>
+          <div style="width:${pct}%;height:100%;background:var(--red);border-radius:6px;transition:width .4s"></div>
         </div>
-        <div style="font-size:11px;color:var(--tx2);text-align:right;margin-top:2px;font-weight:700">\${pct}%</div>
+        <div style="font-size:11px;color:var(--tx2);text-align:right;margin-top:2px;font-weight:700">${pct}%</div>
       </td>
-    </tr>\`;
+    </tr>`;
     html+=vendorRows(sid);
   });
   
